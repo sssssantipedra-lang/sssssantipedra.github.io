@@ -119,8 +119,8 @@
             overflow: hidden;
         }
 
-        .game-type-btn.tarik-tambang { background: linear-gradient(135deg, #ff6b6b, #ee5253); }
-        .game-type-btn.panjat-pinang { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .game-type-btn.tirar-cuerda { background: linear-gradient(135deg, #ff6b6b, #ee5253); }
+        .game-type-btn.carrera-motos { background: linear-gradient(135deg, #4facfe, #00f2fe); }
         .game-type-btn.fight-game { background: linear-gradient(135deg, #f6d365, #fda085); }
 
         .game-container {
@@ -411,7 +411,7 @@
         <div class="bg-white p-8 rounded-3xl text-center shadow-2xl max-w-sm border-4 border-yellow-500">
             <h2 class="text-5xl mb-4">⚠️</h2>
             <p class="text-xl font-bold mb-3 text-gray-800">Aviso de Pantalla Completa</p>
-            <p class="text-sm text-gray-600 mb-6">Tu navegador o plataforma (como Google Sites) tiene bloqueada la pantalla completa por seguridad. Para una mejor experiencia, abre el juego en una nueva pestaña o ventana.</p>
+            <p class="text-sm text-gray-600 mb-6">Tu navegador o plataforma tiene bloqueada la pantalla completa por seguridad.</p>
             <button onpointerdown="document.getElementById('fsErrorModal').classList.add('hidden')" class="bg-yellow-500 text-white px-8 py-3 rounded-full font-bold hover:bg-yellow-600 transition-colors shadow-md">ENTENDIDO</button>
         </div>
     </div>
@@ -430,11 +430,11 @@
             <h1 class="text-5xl font-black mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 drop-shadow-md">Retos Matemáticos</h1>
             <p class="text-gray-500 mb-8 font-bold text-xl uppercase tracking-wider">¡Elige tu modo de juego!</p>
             <div class="space-y-4">
-                <button class="menu-btn game-type-btn tarik-tambang" onpointerdown="selectGameType('tarik-tambang')">
+                <button class="menu-btn game-type-btn tirar-cuerda" onpointerdown="selectGameType('tirar-cuerda')">
                     <span class="overflow-hidden"><img src="https://i.postimg.cc/tCdF2ytk/unnamed_removebg_preview_(2).png" class="w-full h-full object-contain scale-125 drop-shadow-md" referrerpolicy="no-referrer"></span>
-                    <span>Tira y Afloja</span>
+                    <span>Tirar de la cuerda</span>
                 </button>
-                <button class="menu-btn game-type-btn panjat-pinang" onpointerdown="selectGameType('panjat-pinang')">
+                <button class="menu-btn game-type-btn carrera-motos" onpointerdown="selectGameType('carrera-motos')">
                     <span class="overflow-hidden"><img src="https://i.postimg.cc/43jKXFQx/image_removebg_preview_(3).png" class="w-full h-full object-contain scale-[2.2] drop-shadow-md" referrerpolicy="no-referrer"></span>
                     <span>Carrera de motos</span>
                 </button>
@@ -444,7 +444,7 @@
                 </button>
             </div>
             <div class="mt-10 text-xs font-bold text-gray-400 uppercase tracking-widest text-center">
-                © Santi Pedra - Consolación Fundación Educativa - 2025
+                © Santi Pedra - Consolación Fundación Educativa - 2026
             </div>
         </div>
     </div>
@@ -466,7 +466,7 @@
                     <!-- Información del Luchador -->
                     <div id="p1FighterDisplayInfo" class="fighter-info hidden">
                         <h3 id="p1FighterName" class="font-black text-red-600 text-lg uppercase mb-1">Nombre</h3>
-                        <p id="p1FighterDesc" class="text-xs text-gray-600 leading-tight italic">Descripción del luchador.</p>
+                        <p id="p1FighterDesc" class="text-xs text-gray-600 leading-tight italic">Descripción.</p>
                     </div>
                     <p class="moto-hint mt-2 font-black text-red-600 uppercase text-xs tracking-tighter">TOCA PARA CAMBIAR</p>
                 </div>
@@ -482,8 +482,8 @@
                                 <span class="bg-white/70 p-1 rounded">▶</span>
                             </div>
                         </div>
-                        <h4 id="stageSelectName" class="font-black text-gray-800 text-lg">Colosseo</h4>
-                        <p id="stageSelectDesc" class="text-xs text-gray-500 text-center leading-tight">Descripción del escenario.</p>
+                        <h4 id="stageSelectName" class="font-black text-gray-800 text-lg">Escenario</h4>
+                        <p id="stageSelectDesc" class="text-xs text-gray-500 text-center leading-tight">Descripción.</p>
                     </div>
                 </div>
 
@@ -499,15 +499,13 @@
                     <!-- Información del Luchador -->
                     <div id="p2FighterDisplayInfo" class="fighter-info hidden">
                         <h3 id="p2FighterName" class="font-black text-blue-600 text-lg uppercase mb-1">Nombre</h3>
-                        <p id="p2FighterDesc" class="text-xs text-gray-600 leading-tight italic">Descripción del luchador.</p>
+                        <p id="p2FighterDesc" class="text-xs text-gray-600 leading-tight italic">Descripción.</p>
                     </div>
                     <p class="moto-hint mt-2 font-black text-blue-600 uppercase text-xs tracking-tighter">TOCA PARA CAMBIAR</p>
                 </div>
             </div>
             
-            <button class="bg-green-500 text-white w-full py-4 rounded-xl font-black text-2xl hover:bg-green-600 shadow-[0_6px_0_#16a34a] active:translate-y-[6px] active:shadow-[0_0px_0_#16a34a] transition-all" onpointerdown="proceedToMotoMath()">
-                ¡A JUGAR!
-            </button>
+            <button class="bg-green-500 text-white w-full py-4 rounded-xl font-black text-2xl hover:bg-green-600 shadow-[0_6px_0_#16a34a] active:translate-y-[6px] active:shadow-[0_0px_0_#16a34a] transition-all" onpointerdown="proceedToMotoMath()">¡A JUGAR!</button>
             <button class="mt-6 text-gray-400 font-bold hover:underline" onpointerdown="backToGameTypeMenu()">← Volver al menú</button>
         </div>
     </div>
@@ -593,160 +591,88 @@
     </div>
 
     <script>
-        // --- Pilotos de Motos (4 personajes) ---
+        // --- VIDEO PLAYER SETUP ---
+        const ultimateVideoPlayer = document.createElement('video');
+        ultimateVideoPlayer.crossOrigin = "anonymous";
+        ultimateVideoPlayer.playsInline = true;
+        ultimateVideoPlayer.style.display = 'none';
+        document.body.appendChild(ultimateVideoPlayer);
+
         const drivers = [
-            {
-                select: "https://i.postimg.cc/43jKXFQx/image_removebg_preview_(3).png",
-                neutral: "https://i.postimg.cc/dtFy7pMp/image_removebg_preview.png",
-                accel: "https://i.postimg.cc/15KNDBsq/image_removebg_preview_(1).png"
-            },
-            {
-                select: "https://i.postimg.cc/2SKyxXJn/image_removebg_preview_(8).png",
-                neutral: "https://i.postimg.cc/FFyfQpfG/image_removebg_preview_(5).png",
-                accel: "https://i.postimg.cc/bNLsZv9n/image_removebg_preview_(6).png"
-            },
-            {
-                select: "https://i.postimg.cc/DZqznfzm/unnamed_removebg_preview_(5).png",
-                neutral: "https://i.postimg.cc/QChdtL98/image_removebg_preview_(9).png",
-                accel: "https://i.postimg.cc/MKZGJSJW/image_removebg_preview_(11).png"
-            },
-            {
-                select: "https://i.postimg.cc/RhSvmcyr/image_removebg_preview_(14).png",
-                neutral: "https://i.postimg.cc/rp4VNy5F/image_removebg_preview_(13).png",
-                accel: "https://i.postimg.cc/m2hGS2GK/image_removebg_preview_(12).png"
-            }
+            { select: "https://i.postimg.cc/43jKXFQx/image_removebg_preview_(3).png", neutral: "https://i.postimg.cc/dtFy7pMp/image_removebg_preview.png", accel: "https://i.postimg.cc/15KNDBsq/image_removebg_preview_(1).png" },
+            { select: "https://i.postimg.cc/2SKyxXJn/image_removebg_preview_(8).png", neutral: "https://i.postimg.cc/FFyfQpfG/image_removebg_preview_(5).png", accel: "https://i.postimg.cc/bNLsZv9n/image_removebg_preview_(6).png" },
+            { select: "https://i.postimg.cc/DZqznfzm/unnamed_removebg_preview_(5).png", neutral: "https://i.postimg.cc/QChdtL98/image_removebg_preview_(9).png", accel: "https://i.postimg.cc/MKZGJSJW/image_removebg_preview_(11).png" },
+            { select: "https://i.postimg.cc/RhSvmcyr/image_removebg_preview_(14).png", neutral: "https://i.postimg.cc/rp4VNy5F/image_removebg_preview_(13).png", accel: "https://i.postimg.cc/m2hGS2GK/image_removebg_preview_(12).png" }
         ];
 
-        // --- LUCHADORES (Juego de Pelea: 6 personajes) ---
         const fighters = [
             {
-                name: "El luchador galáctico",
-                description: "Dicen que es un alienígena venido de otro universo con poderes superhumanos. Es un maestro de las artes marciales.",
+                name: "Ukog",
+                description: "Maestro de las artes marciales alienígena, venido de otro universo en busca de contrincantes fuertes.",
                 select: "https://i.postimg.cc/MZMyrhbg/image_removebg_preview_(20).png",
                 idle: "https://i.postimg.cc/50tqmHjh/image_removebg_preview_(15).png",
                 attack: "https://i.postimg.cc/1zmp9gGC/image_removebg_preview_(16).png",
                 hurt: "https://i.postimg.cc/DwgsXFn2/image_removebg_preview_(21).png",
-                ultimate: [
-                    "https://i.postimg.cc/L6m5Y83q/image-removebg-preview-(76).png",
-                    "https://i.postimg.cc/gJ9kYz0Y/image-removebg-preview-(77).png",
-                    "https://i.postimg.cc/3xdKm44Y/image-removebg-preview-(78).png"
-                ],
-                defeated: [
-                    "https://i.postimg.cc/RVvDt7Hd/image-removebg-preview-(52).png",
-                    "https://i.postimg.cc/hvsMsYdc/image-removebg-preview-(53).png",
-                    "https://i.postimg.cc/sgqmT7v5/image-removebg-preview-(54).png"
-                ],
+                ultimateVideo: "https://raw.githubusercontent.com/sssssantipedra-lang/data/64834dbe560206ea56de06b16f1295ce03607acd/Airbrush-video-background-remover-preview-1773611286311.mp4",
+                defeated: ["https://i.postimg.cc/RVvDt7Hd/image-removebg-preview-(52).png", "https://i.postimg.cc/hvsMsYdc/image-removebg-preview-(53).png", "https://i.postimg.cc/sgqmT7v5/image-removebg-preview-(54).png"],
                 selectOffset: "15px"
             },
             {
                 name: "Aquiles",
-                description: "Venido del pasado para alcanzar la gloria eterna a través de las batallas de la arena. Hasta ahora, se dice que no ha tenido rival...",
+                description: "Héroe legendario, forjado en las arenas de roma. Venido del pasado en busca de gloria.",
                 select: "https://i.postimg.cc/BQZJvGY7/image_removebg_preview_(22).png",
                 idle: "https://i.postimg.cc/3r1HVc8k/image_removebg_preview_(23).png",
                 attack: "https://i.postimg.cc/Yq0TV2DP/image_removebg_preview_(24).png",
                 hurt: "https://i.postimg.cc/7L8cf3Pw/image_removebg_preview_(25).png",
-                ultimate: [
-                    "https://i.postimg.cc/BZ1kTZb7/image-removebg-preview-(63).png",
-                    "https://i.postimg.cc/nhV3PnF5/image-removebg-preview-(64).png",
-                    "https://i.postimg.cc/wjbQ4Jb3/image-removebg-preview-(66).png"
-                ],
-                defeated: [
-                    "https://i.postimg.cc/XJXPr4Gm/image-removebg-preview-(43).png",
-                    "https://i.postimg.cc/bN1BD6rS/image-removebg-preview-(44).png",
-                    "https://i.postimg.cc/tRxrwrht/image_removebg_preview_(45).png"
-                ]
+                ultimateVideo: "https://raw.githubusercontent.com/sssssantipedra-lang/data/52373cc40d6d856bd6b151a8156f9172ec56e001/Airbrush-video-background-remover-preview-1773597119675.mp4",
+                defeated: ["https://i.postimg.cc/XJXPr4Gm/image-removebg-preview-(43).png", "https://i.postimg.cc/bN1BD6rS/image-removebg-preview-(44).png", "https://i.postimg.cc/tRxrwrht/image_removebg_preview_(45).png"]
             },
             {
                 name: "Kelshyna",
-                description: "Un demonio que lleva habitando la faz de la tierra millones de años. Cuando aparece, auguria malos tiempos.",
+                description: "Un demonio milenario, se dice que cuando aparece ocurren desgracias.",
                 select: "https://i.postimg.cc/FsbGDMhN/image_removebg_preview_(26).png",
                 idle: "https://i.postimg.cc/5trmX1SN/image_removebg_preview_(27).png",
                 attack: "https://i.postimg.cc/gc8K2CXJ/image_removebg_preview_(28).png",
                 hurt: "https://i.postimg.cc/kg1QH9Zs/image_removebg_preview_(29).png",
-                ultimate: [
-                    "https://i.postimg.cc/j2PRmzXd/image-removebg-preview-(67).png",
-                    "https://i.postimg.cc/bw3p7YQG/image-removebg-preview-(68).png",
-                    "https://i.postimg.cc/ydSK3F2g/image-removebg-preview-(69).png"
-                ],
-                defeated: [
-                    "https://i.postimg.cc/WzBxRC3j/image-removebg-preview-(46).png",
-                    "https://i.postimg.cc/d0QsSkpQ/image-removebg-preview-(47).png",
-                    "https://i.postimg.cc/C58SfjBP/image-removebg-preview-(48).png"
-                ]
+                ultimateVideo: "https://raw.githubusercontent.com/sssssantipedra-lang/data/52373cc40d6d856bd6b151a8156f9172ec56e001/Airbrush-video-background-remover-preview-1773604238555.mp4",
+                defeated: ["https://i.postimg.cc/WzBxRC3j/image-removebg-preview-(46).png", "https://i.postimg.cc/d0QsSkpQ/image-removebg-preview-(47).png", "https://i.postimg.cc/C58SfjBP/image-removebg-preview-(48).png"]
             },
             {
                 name: "Niss",
-                description: "Científico extremadamente inteligente, capaz de rejuvenecerse. Tiene 100 años, pero aparenta 20. Ha desarrollado la tecnología explosiva.",
+                description: "Científico superdotado. Tiene 100 años pero aparenta 20, dicen que ha logrado la inmortalidad. Es un genio con tecnología explosiva.",
                 select: "https://i.postimg.cc/PrGTmw5c/image_removebg_preview_(30).png",
                 idle: "https://i.postimg.cc/XvD0XZP7/image_removebg_preview_(31).png",
                 attack: "https://i.postimg.cc/Gh1nBnX7/image_removebg_preview_(32).png",
                 hurt: "https://i.postimg.cc/k5G0rJ5B/image_removebg_preview_(33).png",
-                ultimate: [
-                    "https://i.postimg.cc/L6DcXCnH/image-removebg-preview-(70).png",
-                    "https://i.postimg.cc/sxyLf7zZ/image-removebg-preview-(71).png",
-                    "https://i.postimg.cc/7ZbWLqFz/image-removebg-preview-(72).png"
-                ],
-                defeated: [
-                    "https://i.postimg.cc/Gtvnpd6L/image-removebg-preview-(49).png",
-                    "https://i.postimg.cc/6pWx9scJ/image-removebg-preview-(50).png",
-                    "https://i.postimg.cc/T1VB6QWy/image-removebg-preview-(51).png"
-                ]
+                ultimateVideo: "https://raw.githubusercontent.com/sssssantipedra-lang/data/9555f161500a291c9e9364488d6235904a153be6/Airbrush-video-background-remover-preview-1773608780984.mp4", 
+                defeated: ["https://i.postimg.cc/Gtvnpd6L/image-removebg-preview-(49).png", "https://i.postimg.cc/6pWx9scJ/image-removebg-preview-(50).png", "https://i.postimg.cc/T1VB6QWy/image-removebg-preview-(51).png"]
             },
             {
                 name: "Helga",
-                description: "Aparece en los libros más antiguos de la mitología nórdica. Es una guerrera capaz de controlar el elemento del rayo.",
+                description: "Guerrera nórdica mitológica, su nombre aparece en los pergaminos más ancestrales de Noruega. Es una maestra del rayo.",
                 select: "https://i.postimg.cc/yxGJPYWT/image_removebg_preview_(34).png",
                 idle: "https://i.postimg.cc/xTkNdHF4/image_removebg_preview_(35).png",
                 attack: "https://i.postimg.cc/Rhs43KBj/image-removebg-preview-(79).png",
                 hurt: "https://i.postimg.cc/DfNmR0y8/image_removebg_preview_(37).png",
-                ultimate: [
-                    "https://i.postimg.cc/hG6QT1Zm/image.png",
-                    "https://i.postimg.cc/wMTzBS5F/image-removebg-preview-(62).png",
-                    "https://i.postimg.cc/nzKVr4yB/image-removebg-preview-(61).png"
-                ],
-                defeated: [
-                    "https://i.postimg.cc/3RnDcQth/image-removebg-preview-(55).png",
-                    "https://i.postimg.cc/m2cF8qM0/image-removebg-preview-(56).png",
-                    "https://i.postimg.cc/bvPDYwMJ/image-removebg-preview-(57).png"
-                ]
+                ultimateVideo: "https://raw.githubusercontent.com/sssssantipedra-lang/data/52373cc40d6d856bd6b151a8156f9172ec56e001/Airbrush-video-background-remover-preview-1773598645226.mp4",
+                defeated: ["https://i.postimg.cc/3RnDcQth/image-removebg-preview-(55).png", "https://i.postimg.cc/m2cF8qM0/image-removebg-preview-(56).png", "https://i.postimg.cc/bvPDYwMJ/image-removebg-preview-(57).png"]
             },
             {
                 name: "Vicky",
-                description: "Una artista fallera que ha dominado las artes mágicas para alcanzar la perfección de sus creaciones. Puede hacer cosas increíbles.",
+                description: "Artista fallera con artes mágicas, con su compañero ninja pueden crear lo imposible.",
                 select: "https://i.postimg.cc/T2jfJPLN/image_removebg_preview_(38).png",
                 idle: "https://i.postimg.cc/9Q022t8D/image_removebg_preview_(39).png",
                 attack: "https://i.postimg.cc/rsfHZ7Lj/image_removebg_preview_(41).png",
                 hurt: "https://i.postimg.cc/c49qFtxN/image_removebg_preview_(40).png",
-                ultimate: [
-                    "https://i.postimg.cc/HkQ7XM1s/image-removebg-preview-(73).png",
-                    "https://i.postimg.cc/D098bvxD/image-removebg-preview-(74).png",
-                    "https://i.postimg.cc/k5JDShyn/image-removebg-preview-(75).png"
-                ],
-                defeated: [
-                    "https://i.postimg.cc/DZMwGvCJ/image-removebg-preview-(58).png",
-                    "https://i.postimg.cc/kM2xpBd3/image-removebg-preview-(59).png",
-                    "https://i.postimg.cc/qvTyqwhQ/image-removebg-preview-(60).png"
-                ]
+                ultimateVideo: "https://raw.githubusercontent.com/sssssantipedra-lang/data/d82481e6ff12ca06568fc44cdb38a5d04e495d69/Airbrush-video-background-remover-preview-1773610018499.mp4",
+                defeated: ["https://i.postimg.cc/DZMwGvCJ/image-removebg-preview-(58).png", "https://i.postimg.cc/kM2xpBd3/image-removebg-preview-(59).png", "https://i.postimg.cc/qvTyqwhQ/image-removebg-preview-(60).png"]
             }
         ];
 
-        // --- ESCENARIOS DE PELEA ---
         const stages = [
-            {
-                name: "Colosseo",
-                description: "Lugar donde se forjaron las leyendas de la antigua Roma. Se escuchan los recuerdos de la gente que animaba sin parar.",
-                img: "https://i.postimg.cc/DzzRLvVD/unnamed.jpg"
-            },
-            {
-                name: "Fiordo gélido",
-                description: "En el lugar más recóndito del país de Noruega, en una tierra inhóspita, el hielo se lleva todos los secretos...",
-                img: "https://i.postimg.cc/KzP7YTq8/unnamed.jpg"
-            },
-            {
-                name: "Falla perdida",
-                description: "En una dimensión paralela, esta falla ha visto innumerables combates.",
-                img: "https://i.postimg.cc/v8PgtX6X/unnamed.jpg"
-            }
+            { name: "Colosseo", description: "Leyendas de la antigua Roma buscaron gloria aquí.", img: "https://i.postimg.cc/DzzRLvVD/unnamed.jpg" },
+            { name: "Fiordo gélido", description: "Hielo y secretos noruegos, cuando la batalla empieza, el hielo habla..", img: "https://i.postimg.cc/KzP7YTq8/unnamed.jpg" },
+            { name: "Falla perdida", description: "Dimensión paralela de combate en una falla que tiene una energía extraña.", img: "https://i.postimg.cc/v8PgtX6X/unnamed.jpg" }
         ];
 
         const characterConfig = {
@@ -756,241 +682,71 @@
             motoBg: "https://i.postimg.cc/Pf8myn2x/unnamed.jpg"
         };
 
-        const preTug1 = new Image(); preTug1.src = characterConfig.tugNeutral;
-        const preTug2 = new Image(); preTug2.src = characterConfig.tugPullLeft;
-        const preTug3 = new Image(); preTug3.src = characterConfig.tugPullRight;
-
-        // --- AUDIO DE FONDO ---
-        let bgMusic = new Audio("https://raw.githubusercontent.com/sssssantipedra-lang/data/86030da2f6b18b935dcc78f92728a9c425aadb83/Untitled.mp3");
-        bgMusic.loop = true;
-        bgMusic.volume = 0.4;
-        let musicStarted = false;
-        let isMuted = false;
-        let currentTrackType = 'main';
+        // --- AUDIO ---
+        let bgMusic = document.createElement('audio');
+        bgMusic.src = "https://raw.githubusercontent.com/sssssantipedra-lang/data/86030da2f6b18b935dcc78f92728a9c425aadb83/Untitled.mp3";
+        bgMusic.loop = true; bgMusic.volume = 0.4; document.body.appendChild(bgMusic);
+        let currentTrackType = 'main'; let isMuted = false;
 
         function playMusic(mode) {
-            let newTrackType = mode || 'main';
-            // Dejamos la música original para el menú y las motos
-            if (newTrackType === 'panjat-pinang') newTrackType = 'main'; 
-            
+            let newTrackType = mode === 'fight-game' ? 'fight-game' : (mode === 'tirar-cuerda' ? 'tirar-cuerda' : 'main');
             if (currentTrackType !== newTrackType) {
-                bgMusic.pause();
-                currentTrackType = newTrackType;
-                if (newTrackType === 'fight-game') {
-                    bgMusic.src = "https://raw.githubusercontent.com/sssssantipedra-lang/data/0604fcdd0874533bbdff03183f8892021c30b94d/Arena%20de%20Acero.mp3";
-                } else if (newTrackType === 'tarik-tambang') {
-                    bgMusic.src = "https://raw.githubusercontent.com/sssssantipedra-lang/data/35f102bbe5c0ec36b9707e061c88399e50729c4e/Circuitos%20en%20Llamas.mp3";
-                } else {
-                    bgMusic.src = "https://raw.githubusercontent.com/sssssantipedra-lang/data/86030da2f6b18b935dcc78f92728a9c425aadb83/Untitled.mp3";
-                }
+                bgMusic.pause(); currentTrackType = newTrackType;
+                if (newTrackType === 'fight-game') bgMusic.src = "https://raw.githubusercontent.com/sssssantipedra-lang/data/0604fcdd0874533bbdff03183f8892021c30b94d/Arena%20de%20Acero.mp3";
+                else if (newTrackType === 'tirar-cuerda') bgMusic.src = "https://raw.githubusercontent.com/sssssantipedra-lang/data/35f102bbe5c0ec36b9707e061c88399e50729c4e/Circuitos%20en%20Llamas.mp3";
+                else bgMusic.src = "https://raw.githubusercontent.com/sssssantipedra-lang/data/86030da2f6b18b935dcc78f92728a9c425aadb83/Untitled.mp3";
                 bgMusic.load();
             }
-            
-            if (!isMuted) {
-                bgMusic.play().catch(e => console.log("Autoplay bloqueado", e));
-            }
-            musicStarted = true;
+            if (!isMuted) bgMusic.play().catch(() => {});
         }
 
         function toggleBGM() {
             const btn = document.getElementById('bgmToggleBtn');
-            if (bgMusic.paused) {
-                bgMusic.play();
-                isMuted = false;
-                btn.innerText = "🔊";
-            } else {
-                bgMusic.pause();
-                isMuted = true;
-                btn.innerText = "🔇";
-            }
-            musicStarted = true;
+            if (bgMusic.paused) { bgMusic.play(); isMuted = false; btn.innerText = "🔊"; }
+            else { bgMusic.pause(); isMuted = true; btn.innerText = "🔇"; }
         }
 
-        // --- PRECARGA GLOBAL DE RECURSOS (Evita retrasos en animaciones) ---
-        const imageCache = [];
-
+        // --- PRELOAD ---
         function preloadEverything() {
             const urls = [];
-            
-            // Precargar Motos
-            drivers.forEach(d => { urls.push(d.select, d.neutral, d.accel); });
-            // Precargar Luchadores
-            fighters.forEach(f => { 
-                urls.push(f.select, f.idle, f.attack, f.hurt); 
-                if (Array.isArray(f.ultimate)) f.ultimate.forEach(uImg => urls.push(uImg));
-                if (Array.isArray(f.defeated)) f.defeated.forEach(dImg => urls.push(dImg));
-            });
-            // Precargar Escenarios
+            drivers.forEach(d => urls.push(d.select, d.neutral, d.accel));
+            fighters.forEach(f => { urls.push(f.select, f.idle, f.attack, f.hurt); if (f.defeated) f.defeated.forEach(d => urls.push(d)); });
             stages.forEach(s => urls.push(s.img));
-            // Precargar Tira y Afloja y fondos
             urls.push(characterConfig.tugNeutral, characterConfig.tugPullLeft, characterConfig.tugPullRight);
-            urls.push("https://i.postimg.cc/28BY5pPW/image.png"); // Tira y afloja Equipo Rojo
-            urls.push("https://i.postimg.cc/T2K1n4ZZ/image.png"); // Tira y afloja Equipo Azul
-            urls.push(characterConfig.motoBg);
-            urls.push("https://i.postimg.cc/hvWqnkJf/image.png"); // Fondo de victoria Colosseo
+            urls.push("https://i.postimg.cc/28BY5pPW/image.png", "https://i.postimg.cc/T2K1n4ZZ/image.png");
+            urls.push(characterConfig.motoBg, "https://i.postimg.cc/hvWqnkJf/image.png");
 
-            let loaded = 0;
-            const total = urls.length;
-            const loadingBar = document.getElementById('loadingBar');
-            const loadingText = document.getElementById('loadingText');
-            const loadingScreen = document.getElementById('loadingScreen');
-
-            function updateProgress() {
-                loaded++;
-                let pct = Math.floor((loaded / total) * 100);
-                if (loadingBar) loadingBar.style.width = pct + '%';
-                if (loadingText) loadingText.innerText = pct + '%';
-                
-                if (loaded >= total) {
-                    setTimeout(() => {
-                        if (loadingScreen) {
-                            loadingScreen.style.opacity = '0';
-                            setTimeout(() => loadingScreen.classList.add('hidden'), 500);
-                        }
-                    }, 500); // Pequeña pausa para ver el 100%
-                }
-            }
-
-            // Iniciar carga de todas las imágenes
-            urls.forEach(url => {
-                if (!url) { updateProgress(); return; }
-                const img = new Image();
-                img.onload = updateProgress;
-                img.onerror = updateProgress; // Avanzar aunque falle alguna para no bloquear
-                img.src = url;
-                imageCache.push(img); // Guardar referencia en caché
-            });
-
-            // Failsafe: Si por alguna razón la red falla, quitar pantalla de carga a los 12 segundos
-            setTimeout(() => {
-                if (loaded < total && loadingScreen && !loadingScreen.classList.contains('hidden')) {
-                    loadingScreen.style.opacity = '0';
-                    setTimeout(() => loadingScreen.classList.add('hidden'), 500);
-                }
-            }, 12000);
+            let loaded = 0; const total = urls.length;
+            const updateProgress = () => {
+                loaded++; let pct = Math.floor((loaded / total) * 100);
+                document.getElementById('loadingBar').style.width = pct + '%'; document.getElementById('loadingText').innerText = pct + '%';
+                if (loaded >= total) setTimeout(() => { document.getElementById('loadingScreen').style.opacity = '0'; setTimeout(() => document.getElementById('loadingScreen').classList.add('hidden'), 500); }, 500);
+            };
+            urls.forEach(url => { const img = new Image(); img.onload = updateProgress; img.onerror = updateProgress; img.src = url; });
         }
-        
-        // Ejecutar precarga al iniciar
         preloadEverything();
 
-        // --- SOLICITAR PANTALLA COMPLETA ---
-        function enterFullscreen() {
-            const doc = document.documentElement;
-            let req = doc.requestFullscreen || doc.webkitRequestFullscreen || doc.mozRequestFullScreen || doc.msRequestFullscreen;
-            if (req && !document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-                req.call(doc).catch(e => console.log("Fullscreen automático cancelado por el navegador:", e));
-            }
-        }
-        
-        function toggleFullscreen() { 
-            const doc = document.documentElement;
-            const isFullscreen = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
-            
-            if (!isFullscreen) {
-                let req = doc.requestFullscreen || doc.msRequestFullscreen || doc.mozRequestFullScreen || doc.webkitRequestFullscreen;
-                if (req) {
-                    req.call(doc).catch(err => {
-                        console.log("Error de fullscreen:", err);
-                        document.getElementById('fsErrorModal').classList.remove('hidden');
-                    });
-                } else {
-                    document.getElementById('fsErrorModal').classList.remove('hidden');
-                }
-            } else {
-                let exit = document.exitFullscreen || document.msExitFullscreen || document.mozCancelFullScreen || document.webkitExitFullscreen;
-                if (exit) exit.call(document);
-            }
-        }
-
-        // --- ESTADO ---
+        // --- CORE LOGIC ---
         let selectedDrivers = { p1: 0, p2: 1 };
         let selectedStage = 0;
         let playerNames = { p1: "Equipo Rojo", p2: "Equipo Azul" };
-        let gameState = { theme: '', mode: '', level: '', p1: { currentAnswer: '', target: 0, score: 0, streak: 0 }, p2: { currentAnswer: '', target: 0, score: 0, streak: 0 }, tugBalance: 0, active: false, winningScore: 10 };
+        let gameState = { theme: '', mode: '', level: '', p1: { currentAnswer: '', target: 0, score: 0, streak: 0 }, p2: { currentAnswer: '', target: 0, score: 0, streak: 0 }, active: false, winningScore: 10 };
         const screens = { main: document.getElementById('gameTypeMenu'), motoSelect: document.getElementById('motoSelectMenu'), math: document.getElementById('mathModeMenu'), level: document.getElementById('levelMenu'), game: document.getElementById('gameScreen') };
 
-        // --- TECLADO VIRTUAL ---
-        let kbText = "";
-        let currentKBPrompt = 1;
-        function openVirtualKeyboard(p) { 
-            currentKBPrompt = p; 
-            kbText = playerNames['p'+p].startsWith("Jugador") || playerNames['p'+p].startsWith("Equipo") || playerNames['p'+p].startsWith("Luchador") ? "" : playerNames['p'+p]; 
-            let labelText = "NOMBRE PARA JUGADOR " + p;
-            if(gameState.theme === 'tarik-tambang') labelText = "NOMBRE PARA EQUIPO " + p;
-            if(gameState.theme === 'fight-game') labelText = "NOMBRE PARA LUCHADOR " + p;
-            document.getElementById('keyboardLabel').innerText = labelText;
-            document.getElementById('keyboardInputPreview').className = `text-3xl font-black min-h-[40px] tracking-wide ${p === 1 ? 'text-red-600' : 'text-blue-600'}`;
-            updateKBPreview(); renderKeyboard(); 
-            document.getElementById('virtualKeyboardModal').classList.remove('hidden'); 
-        }
+        function showScreen(k) { Object.values(screens).forEach(s => s.classList.add('hidden')); screens[k].classList.remove('hidden'); }
         
-        function closeVirtualKeyboard() { document.getElementById('virtualKeyboardModal').classList.add('hidden'); }
-        function updateKBPreview() { document.getElementById('keyboardInputPreview').innerText = kbText + "_"; }
-
-        document.addEventListener('keydown', (e) => {
-            const modal = document.getElementById('virtualKeyboardModal');
-            if (!modal || modal.classList.contains('hidden')) return;
-            const key = e.key;
-            if (key === 'Backspace') handleKBKey('DEL');
-            else if (key === 'Enter') handleKBKey('DONE');
-            else if (key === ' ') { e.preventDefault(); handleKBKey('SPACE'); }
-            else if (key.length === 1 && /[a-zA-ZñÑ]/.test(key)) handleKBKey(key.toUpperCase());
-        });
-
-        function handleKBKey(k) {
-            if (k === 'DEL') kbText = kbText.slice(0, -1);
-            else if (k === 'DONE') {
-                let fallbackName = `Jugador ${currentKBPrompt}`;
-                if(gameState.theme === 'tarik-tambang') fallbackName = `Equipo ${currentKBPrompt}`;
-                if(gameState.theme === 'fight-game') fallbackName = `Luchador ${currentKBPrompt}`;
-                playerNames[`p${currentKBPrompt}`] = kbText.trim() || fallbackName;
-                document.getElementById(`p${currentKBPrompt}NameDisplay`).innerText = playerNames[`p${currentKBPrompt}`];
-                closeVirtualKeyboard();
-            } else if (k === 'SPACE') { if (kbText.length < 12) kbText += " "; }
-            else { if (kbText.length < 12) kbText += k; }
-            updateKBPreview();
-        }
-        function renderKeyboard() {
-            const rows = [['Q','W','E','R','T','Y','U','I','O','P'],['A','S','D','F','G','H','J','K','L','Ñ'],['Z','X','C','V','B','N','M','DEL'],['SPACE', 'DONE']];
-            const container = document.getElementById('kbContainer'); container.innerHTML = '';
-            rows.forEach(row => {
-                const rowDiv = document.createElement('div'); rowDiv.className = 'keyboard-row';
-                row.forEach(key => {
-                    const btn = document.createElement('div'); btn.className = 'key' + (key === 'DEL' || key === 'DONE' ? ' special' : '') + (key === 'DONE' ? ' done' : '') + (key === 'SPACE' ? ' space' : '');
-                    btn.innerText = key === 'SPACE' ? 'ESPACIO' : (key === 'DEL' ? '⌫' : (key === 'DONE' ? 'LISTO' : key));
-                    btn.onpointerdown = (e) => { e.preventDefault(); handleKBKey(key); };
-                    rowDiv.appendChild(btn);
-                });
-                container.appendChild(rowDiv);
-            });
-        }
-
-        // --- GESTIÓN IMÁGENES ---
-        function setupSafeImage(imgId, fbId, src) {
-            const img = document.getElementById(imgId);
-            const fb = document.getElementById(fbId);
-            if (!img) return;
-            img.style.display = 'none';
-            if(fb) fb.style.display = 'none';
-            img.setAttribute('referrerpolicy', 'no-referrer');
-            img.onload = () => { img.style.display = 'block'; if(fb) fb.style.display = 'none'; };
-            img.onerror = () => { img.style.display = 'none'; if(fb) fb.style.display = 'block'; };
-            setTimeout(() => { if (img.style.display === 'none' && !img.complete) img.src = src + "?t=" + Date.now(); }, 3000);
-            img.src = src;
-        }
-
-        function selectGameType(type) {
-            enterFullscreen(); // Poner en pantalla completa al hacer clic en un modo
-            playMusic(type);
-            gameState.theme = type;
+        function selectGameType(type) { 
+            if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(() => {}); 
+            playMusic(type); 
+            gameState.theme = type; 
             showScreen('motoSelect'); 
             selectedDrivers = { p1: 0, p2: 1 }; 
             selectedStage = 0;
-            
+
             const stageBox = document.getElementById('stageSelectorBox');
             const vsLabel = document.getElementById('vsLabel');
             
-            if (type === 'tarik-tambang') {
+            if (type === 'tirar-cuerda') {
                 playerNames = { p1: "Equipo Rojo", p2: "Equipo Azul" };
                 document.getElementById('driverSelectTitle').innerText = "Configura tus Equipos";
                 document.getElementById('driverSelectSubtitle').innerText = "Toca el nombre para cambiar tu equipo";
@@ -998,7 +754,7 @@
                 document.querySelectorAll('.moto-hint').forEach(el => el.style.display = 'none');
                 stageBox.classList.add('hidden');
                 vsLabel.classList.remove('hidden');
-            } else if (type === 'panjat-pinang') {
+            } else if (type === 'carrera-motos') {
                 playerNames = { p1: "Jugador 1", p2: "Jugador 2" };
                 document.getElementById('driverSelectTitle').innerText = "Prepara tu Carrera";
                 document.getElementById('driverSelectSubtitle').innerText = "Toca el nombre o la moto para elegir tu piloto";
@@ -1016,130 +772,277 @@
                 vsLabel.classList.add('hidden');
             }
             
-            updateSelectionUI();
-            const mTitle = document.getElementById('modeTitle');
-            if(mTitle) mTitle.innerText = { 'tarik-tambang': 'Tira y Afloja', 'panjat-pinang': 'Carrera de motos', 'fight-game': 'Derrota a tu rival' }[type];
-        }
-
-        function toggleDriver(p) { 
-            if(gameState.theme === 'tarik-tambang') return;
-            const arr = gameState.theme === 'fight-game' ? fighters : drivers;
-            selectedDrivers['p'+p] = (selectedDrivers['p'+p] + 1) % arr.length; 
             updateSelectionUI(); 
-        }
-
-        function toggleStage() {
-            selectedStage = (selectedStage + 1) % stages.length;
-            updateSelectionUI();
+            const mTitle = document.getElementById('modeTitle');
+            if(mTitle) mTitle.innerText = { 'tirar-cuerda': 'Tirar de la cuerda', 'carrera-motos': 'Carrera de motos', 'fight-game': 'Derrota a tu rival' }[type];
         }
 
         function updateSelectionUI() {
             const arr = gameState.theme === 'fight-game' ? fighters : drivers;
+            const stageBox = document.getElementById('stageSelectorBox');
+            const vsLabel = document.getElementById('vsLabel');
+            
+            if (gameState.theme === 'fight-game') { 
+                stageBox.classList.remove('hidden'); vsLabel.classList.add('hidden'); 
+                document.querySelectorAll('.fighter-info').forEach(e => e.classList.remove('hidden')); 
+                document.querySelectorAll('.moto-hint').forEach(e => { e.style.display = 'block'; e.innerText = 'TOCA PARA CAMBIAR'; });
+            } else if (gameState.theme === 'carrera-motos') { 
+                stageBox.classList.add('hidden'); vsLabel.classList.remove('hidden'); 
+                document.querySelectorAll('.fighter-info').forEach(e => e.classList.add('hidden')); 
+                document.querySelectorAll('.moto-hint').forEach(e => { e.style.display = 'block'; e.innerText = 'TOCA PARA CAMBIAR'; });
+            } else {
+                stageBox.classList.add('hidden'); vsLabel.classList.remove('hidden'); 
+                document.querySelectorAll('.fighter-info').forEach(e => e.classList.add('hidden')); 
+                document.querySelectorAll('.moto-hint').forEach(e => e.style.display = 'none');
+            }
+
             ['p1', 'p2'].forEach(p => {
                 const img = document.getElementById(p + 'SelectImg');
-                const fb = document.getElementById(p + 'Fallback');
-                const nameDisplay = document.getElementById(p + 'NameDisplay');
-                img.style.display = 'none'; if(fb) fb.style.display = 'none';
-                if (gameState.theme === 'panjat-pinang' || gameState.theme === 'fight-game') {
-                    if(fb) fb.innerText = gameState.theme === 'fight-game' ? "🥊" : "🏍️";
-                    img.onload = () => { img.style.display = 'block'; };
-                    img.onerror = () => { if (!img.src.startsWith('data:image')) { img.style.display = 'none'; if(fb) fb.style.display = 'block'; }};
-                    const fighterData = arr[selectedDrivers[p]];
-                    img.src = fighterData.select;
-                    const offset = fighterData.selectOffset || '0px';
-                    img.style.transform = `translateX(${offset}) scale(1.3)`;
-                    if (gameState.theme === 'fight-game') {
-                        document.getElementById(p + 'FighterName').innerText = fighterData.name;
-                        document.getElementById(p + 'FighterDesc').innerText = fighterData.description;
-                    }
-                } else {
-                    if(fb) fb.style.display = 'none';
-                    img.onload = () => { img.style.display = 'block'; };
-                    img.onerror = () => { img.style.display = 'none'; if(fb) { fb.style.display = 'block'; fb.innerText = p === 'p1' ? "🔴" : "🔵"; }};
+                img.style.display = 'block';
+                if (gameState.theme === 'tirar-cuerda') {
                     img.src = p === 'p1' ? "https://i.postimg.cc/28BY5pPW/image.png" : "https://i.postimg.cc/T2K1n4ZZ/image.png";
                     img.style.transform = `translateX(0px) scale(1.0)`;
+                } else {
+                    const fighter = arr[selectedDrivers[p]];
+                    img.src = fighter.select; 
+                    img.style.transform = `translateX(${fighter.selectOffset || '0px'}) scale(1.3)`;
+                    if (gameState.theme === 'fight-game') { 
+                        document.getElementById(p + 'FighterName').innerText = fighter.name; 
+                        document.getElementById(p + 'FighterDesc').innerText = fighter.description; 
+                    }
                 }
-                nameDisplay.innerText = playerNames[p];
+                document.getElementById(p + 'NameDisplay').innerText = playerNames[p];
             });
 
-            if (gameState.theme === 'fight-game') {
-                const stage = stages[selectedStage];
-                document.getElementById('stageSelectPreview').src = stage.img;
-                document.getElementById('stageSelectName').innerText = stage.name;
-                document.getElementById('stageSelectDesc').innerText = stage.description;
+            if (gameState.theme === 'fight-game') { 
+                document.getElementById('stageSelectPreview').src = stages[selectedStage].img; 
+                document.getElementById('stageSelectName').innerText = stages[selectedStage].name; 
+                document.getElementById('stageSelectDesc').innerText = stages[selectedStage].description; 
             }
         }
 
-        function proceedToMotoMath() { showScreen('math'); }
-        function selectMathMode(mode) { gameState.mode = mode; showScreen('level'); }
-        function selectLevel(level) { gameState.level = level; startGame(); }
-        function showScreen(k) { Object.values(screens).forEach(s => { if(s) s.classList.add('hidden'); }); if (screens[k]) screens[k].classList.remove('hidden'); }
         function backToGameTypeMenu() { showScreen('main'); gameState.active = false; playMusic('main'); }
-        function backToMainMenu() { showScreen('math'); }
+        function toggleDriver(p) { const arr = gameState.theme === 'fight-game' ? fighters : drivers; selectedDrivers['p'+p] = (selectedDrivers['p'+p] + 1) % arr.length; updateSelectionUI(); }
+        function toggleStage() { selectedStage = (selectedStage + 1) % stages.length; updateSelectionUI(); }
 
-        function startGame() {
-            showScreen('game'); resetGameData(); setupVisuals();
-            document.getElementById('p1-display-name').innerText = playerNames.p1;
-            document.getElementById('p2-display-name').innerText = playerNames.p2;
-            const overlay = document.getElementById('countdownOverlay'); overlay.classList.remove('hidden');
-            let count = 3; document.getElementById('countdownValue').innerText = count;
-            const timer = setInterval(() => {
-                count--;
-                if (count > 0) document.getElementById('countdownValue').innerText = count;
-                else if (count === 0) document.getElementById('countdownValue').innerText = "¡YA!";
-                else { clearInterval(timer); overlay.classList.add('hidden'); gameState.active = true; generateQuestion(1); generateQuestion(2); }
-            }, 800);
+        // Virtual Keyboard
+        let kbText = ""; let currentKBPrompt = 1;
+        function openVirtualKeyboard(p) { currentKBPrompt = p; kbText = ""; renderKeyboard(); document.getElementById('virtualKeyboardModal').classList.remove('hidden'); }
+        function closeVirtualKeyboard() { document.getElementById('virtualKeyboardModal').classList.add('hidden'); }
+        function handleKBKey(k) { if (k === 'DEL') kbText = kbText.slice(0, -1); else if (k === 'DONE') { playerNames['p'+currentKBPrompt] = kbText || 'Jugador '+currentKBPrompt; document.getElementById('p'+currentKBPrompt+'NameDisplay').innerText = playerNames['p'+currentKBPrompt]; closeVirtualKeyboard(); } else if (kbText.length < 12) kbText += (k === 'SPACE' ? ' ' : k); document.getElementById('keyboardInputPreview').innerText = kbText + "_"; }
+        function renderKeyboard() {
+            const rows = [['Q','W','E','R','T','Y','U','I','O','P'],['A','S','D','F','G','H','J','K','L','Ñ'],['Z','X','C','V','B','N','M','DEL'],['SPACE', 'DONE']];
+            const cont = document.getElementById('kbContainer'); cont.innerHTML = '';
+            rows.forEach(r => { const div = document.createElement('div'); div.className = 'keyboard-row'; r.forEach(k => { const b = document.createElement('div'); b.className = 'key'; b.innerText = k; b.onpointerdown = (e) => { e.preventDefault(); handleKBKey(k); }; div.appendChild(b); }); cont.appendChild(div); });
         }
 
-        function resetGameData() {
-            gameState.p1 = { currentAnswer: '', score: 0, streak: 0 }; 
-            gameState.p2 = { currentAnswer: '', score: 0, streak: 0 };
-            gameState.tugBalance = 0; gameState.active = false;
-            gameState.winningScore = (gameState.theme === 'tarik-tambang') ? 3 : 8;
+        function startGame() { 
+            showScreen('game'); 
+            gameState.p1 = { score: 0, streak: 0, currentAnswer: '', target: 0 }; 
+            gameState.p2 = { score: 0, streak: 0, currentAnswer: '', target: 0 };
+            gameState.tugBalance = 0;
+            gameState.winningScore = gameState.theme === 'tirar-cuerda' ? 3 : 10;
+            
+            document.getElementById('p1-display-name').innerText = playerNames.p1;
+            document.getElementById('p2-display-name').innerText = playerNames.p2;
+            
+            setupVisuals(); 
             updateUI(1); updateUI(2);
+
+            const overlay = document.getElementById('countdownOverlay'); overlay.classList.remove('hidden');
+            let c = 3; document.getElementById('countdownValue').innerText = c;
+            const timer = setInterval(() => { c--; if (c > 0) document.getElementById('countdownValue').innerText = c; else if (c === 0) document.getElementById('countdownValue').innerText = "¡YA!"; else { clearInterval(timer); overlay.classList.add('hidden'); gameState.active = true; generateQuestion(1); generateQuestion(2); } }, 800);
+        }
+
+        function generateQuestion(p) {
+            let a, b, op, ans; const l = gameState.level; const m = gameState.mode;
+            if (m === 'addition') { op = '+'; if (l === 'beginner') { a = rand(1, 9); b = rand(1, 9); } else if (l === 'amateur') { a = rand(1, 9); b = rand(10, 50); } else { a = rand(10, 99); b = rand(10, 99); } ans = a + b; }
+            else if (m === 'subtraction') { op = '-'; if (l === 'beginner') { a = rand(5, 12); b = rand(1, 5); } else if (l === 'amateur') { a = rand(20, 50); b = rand(1, 19); } else { a = rand(50, 99); b = rand(10, 49); } ans = a - b; }
+            else if (m === 'multiplication') { op = '×'; if (l === 'beginner') { a = rand(1, 5); b = rand(1, 5); } else if (l === 'amateur') { a = rand(2, 9); b = rand(2, 12); } else { a = rand(11, 20); b = rand(2, 9); } ans = a * b; }
+            else { op = '÷'; if (l === 'beginner') { b = rand(1, 5); ans = rand(1, 5); a = b * ans; } else if (l === 'amateur') { b = rand(2, 9); ans = rand(5, 12); a = b * ans; } else { b = rand(3, 12); ans = rand(10, 20); a = b * ans; } }
+            gameState['p'+p].target = ans; document.getElementById('p'+p+'-question').innerText = `${a} ${op} ${b} = ?`;
         }
 
         function setupVisuals() {
             const container = document.getElementById('visualArea'); container.innerHTML = '';
-            if (gameState.theme === 'tarik-tambang') {
-                document.getElementById('gameTitle').innerText = "Tira y Afloja"; document.getElementById('gameInstruction').innerText = "¡Responde para tirar!";
-                container.innerHTML = `<div class="victory-line-dotted"></div><div class="tug-rope-container" id="tugRopeGroup"><img id="tugAnimatedImg" class="tug-group-img" style="display:none"><span class="text-7xl" id="tugFallback" style="display:none">🪢</span></div>`;
-                setupSafeImage('tugAnimatedImg', 'tugFallback', characterConfig.tugNeutral);
-            } else if (gameState.theme === 'panjat-pinang') {
-                document.getElementById('gameTitle').innerText = "Carrera de motos"; document.getElementById('gameInstruction').innerText = "¡Acelera hacia la meta!";
-                container.innerHTML = `<div class="race-background" style="background-image: url('${characterConfig.motoBg}')"></div><div class="moto-track-container-vertical"><div class="moto-lane-vertical"><div class="moto-racer-vertical" id="climber1" style="top: 32%"><img id="motoImg1" class="moto-img-v" style="display:block"></div></div><div class="moto-lane-vertical"><div class="moto-racer-vertical" id="climber2" style="top: 32%"><img id="motoImg2" class="moto-img-v" style="display:block"></div></div></div>`;
-                const m1 = document.getElementById('motoImg1'); const m2 = document.getElementById('motoImg2');
-                m1.setAttribute('referrerpolicy', 'no-referrer'); m2.setAttribute('referrerpolicy', 'no-referrer');
-                m1.src = drivers[selectedDrivers.p1].neutral; m2.src = drivers[selectedDrivers.p2].neutral;
-            } else if (gameState.theme === 'fight-game') {
-                document.getElementById('gameTitle').innerText = "¡Derrota a tu rival!"; document.getElementById('gameInstruction').innerText = "¡Acierta para golpear!";
-                const stageBg = stages[selectedStage].img;
+            if (gameState.theme === 'fight-game') {
+                document.getElementById('gameTitle').innerText = "¡Derrota a tu rival!"; 
+                document.getElementById('gameInstruction').innerText = "¡Acierta para golpear!";
                 container.innerHTML = `
-                    <div class="w-full h-full relative rounded-xl overflow-hidden bg-cover bg-center flex flex-col justify-end pb-0 shadow-inner" style="background-image: url('${stageBg}')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="absolute top-4 w-full px-4 md:px-8 flex justify-between items-center z-20">
-                            <div class="w-5/12 h-4 md:h-6 border-4 border-red-600 bg-gray-200 rounded-lg overflow-hidden">
-                                <div id="hp1" class="h-full bg-red-500 w-full transition-all duration-300 transform origin-left"></div>
-                            </div>
-                            <div class="text-xl md:text-3xl font-black text-yellow-400 italic px-2">VS</div>
-                            <div class="w-5/12 h-4 md:h-6 border-4 border-blue-600 bg-gray-200 rounded-lg overflow-hidden flex justify-end">
-                                <div id="hp2" class="h-full bg-blue-500 w-full transition-all duration-300 transform origin-right"></div>
-                            </div>
+                    <div class="w-full h-full relative rounded-xl overflow-hidden bg-cover bg-center flex flex-col justify-end shadow-inner" style="background-image: url('${stages[selectedStage].img}')">
+                        <div class="absolute inset-0 bg-black/20 z-0"></div>
+                        <canvas id="ultimateCanvas" class="absolute bottom-[-10px] left-1/2 z-40 pointer-events-none hidden" style="transform-origin: bottom;"></canvas>
+                        <div class="absolute top-4 w-full px-4 flex justify-between items-center z-20">
+                            <div class="w-5/12 h-4 border-4 border-red-600 bg-gray-200 rounded-lg overflow-hidden"><div id="hp1" class="h-full bg-red-500 w-full transition-all"></div></div>
+                            <div class="text-2xl font-black text-yellow-400 italic">VS</div>
+                            <div class="w-5/12 h-4 border-4 border-blue-600 bg-gray-200 rounded-lg overflow-hidden flex justify-end"><div id="hp2" class="h-full bg-blue-500 w-full transition-all"></div></div>
                         </div>
-                        <div class="flex justify-between items-end px-4 xl:px-12 relative z-10 translate-y-4 xl:translate-y-8">
-                            <div id="fighter1-container" class="relative w-40 h-40 lg:w-48 lg:h-48 xl:w-64 xl:h-64 transform transition-transform duration-100">
-                                <img id="fighter1" class="w-full h-full object-contain drop-shadow-2xl relative z-10" src="${fighters[selectedDrivers.p1].idle}" referrerpolicy="no-referrer">
-                            </div>
-                            <div id="fighter2-container" class="relative w-40 h-40 lg:w-48 lg:h-48 xl:w-64 xl:h-64 transform transition-transform duration-100" style="transform: scaleX(-1);">
-                                <img id="fighter2" class="w-full h-full object-contain drop-shadow-2xl relative z-10" src="${fighters[selectedDrivers.p2].idle}" referrerpolicy="no-referrer">
-                            </div>
+                        <div class="flex justify-between items-end px-4 relative z-30 translate-y-4">
+                            <div id="fighter1-container" class="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 transform transition-transform"><img id="fighter1" class="w-full h-full object-contain object-bottom" src="${fighters[selectedDrivers.p1].idle}"></div>
+                            <div id="fighter2-container" class="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 transform transition-transform" style="transform: scaleX(-1);"><img id="fighter2" class="w-full h-full object-contain object-bottom" src="${fighters[selectedDrivers.p2].idle}"></div>
                         </div>
                     </div>`;
+            } else if (gameState.theme === 'carrera-motos') {
+                document.getElementById('gameTitle').innerText = "Carrera de motos"; 
+                document.getElementById('gameInstruction').innerText = "¡Acelera hacia la meta!";
+                container.innerHTML = `<div class="race-background" style="background-image: url('${characterConfig.motoBg}')"></div><div class="moto-track-container-vertical"><div class="moto-lane-vertical"><div class="moto-racer-vertical" id="climber1" style="top:32%"><img id="motoImg1" class="moto-img-v" src="${drivers[selectedDrivers.p1].neutral}" style="display:block"></div></div><div class="moto-lane-vertical"><div class="moto-racer-vertical" id="climber2" style="top:32%"><img id="motoImg2" class="moto-img-v" src="${drivers[selectedDrivers.p2].neutral}" style="display:block"></div></div></div>`;
+            } else if (gameState.theme === 'tirar-cuerda') {
+                document.getElementById('gameTitle').innerText = "Tirar de la cuerda"; 
+                document.getElementById('gameInstruction').innerText = "¡Responde para tirar!";
+                container.innerHTML = `<div class="victory-line-dotted"></div><div class="tug-rope-container" id="tugRopeGroup"><img id="tugAnimatedImg" class="tug-group-img" src="${characterConfig.tugNeutral}" style="display:block"></div>`;
+            }
+        }
+
+        function checkAnswer(p) {
+            const ps = gameState['p'+p]; if (parseInt(ps.currentAnswer) === ps.target) {
+                let def = p === 1 ? 2 : 1; let recovered = false;
+                if (gameState.theme === 'fight-game' && gameState['p'+def].streak >= 3 && gameState['p'+def].score > 0) { gameState['p'+def].score--; recovered = true; }
+                ps.score++; ps.streak++; gameState['p'+def].streak = 0; handleWinStep(p, recovered);
+            } else { 
+                document.getElementById(`p${p}-card`).style.borderColor = '#fed7d7'; setTimeout(() => document.getElementById(`p${p}-card`).style.borderColor = 'white', 300);
+                ps.streak = 0; 
+            }
+            ps.currentAnswer = ''; updateUI(p); generateQuestion(p);
+        }
+
+        function handleWinStep(p, recovered) {
+            if (gameState.theme === 'fight-game') {
+                const def = p === 1 ? 2 : 1;
+                document.getElementById('hp'+def).style.width = Math.max(0, 100 - (gameState['p'+p].score / gameState.winningScore) * 100) + '%';
+                if (recovered) {
+                    document.getElementById('hp'+p).style.width = Math.max(0, 100 - (gameState['p'+def].score / gameState.winningScore) * 100) + '%';
+                    const hText = document.createElement('div'); hText.innerText = "+1 VIDA 💚"; hText.className = "absolute -top-12 left-1/2 -translate-x-1/2 text-green-400 font-black text-2xl drop-shadow-md animate-bounce z-50 whitespace-nowrap";
+                    document.getElementById('fighter'+p+'-container').appendChild(hText); setTimeout(() => hText.remove(), 2000);
+                }
+                if (gameState['p'+p].score >= gameState.winningScore) {
+                    gameState.active = false; const attackerIdx = selectedDrivers['p'+p];
+                    const imgDef = document.getElementById('fighter'+def); const imgAtt = document.getElementById('fighter'+p);
+                    imgAtt.style.opacity = '0'; imgDef.src = fighters[selectedDrivers['p'+def]].defeated[0]; imgDef.style.transform = "scale(0.65) translateY(-4%)"; imgDef.style.transformOrigin = "bottom";
+                    const finish = () => { 
+                        imgAtt.style.opacity = '1'; 
+                        if (imgDef) imgDef.style.opacity = '1';
+                        imgAtt.src = fighters[attackerIdx].idle; 
+                        endGame(p); 
+                    };
+                    
+                    const videoUrl = fighters[attackerIdx].ultimateVideo;
+                    if (videoUrl) {
+                        ultimateVideoPlayer.src = videoUrl; ultimateVideoPlayer.load();
+                        const canvas = document.getElementById('ultimateCanvas');
+                        
+                        // Configuración por personaje (tamaño y posición del ataque final)
+                        let targetX = p === 1 ? '35%' : '-35%'; // Desplazamiento base hacia el oponente
+                        let scale = '0.6';
+                        let startY = '0px';
+                        let endY = '0px';
+                        let transitionStyle = 'none';
+
+                        const transformStr = (y, s) => p === 1 ? `translateX(calc(-50% + ${targetX})) translateY(${y}) scale(${s})` : `translateX(calc(-50% + ${targetX})) translateY(${y}) scaleX(-1) scale(${s})`;
+
+                        if (attackerIdx === 0) { // Personaje 1 (Ukog)
+                            scale = '0.126'; // Reducido un 35% extra
+                            targetX = p === 1 ? '-25%' : '25%'; // Empieza en su lado de la pantalla
+                            setTimeout(() => {
+                                targetX = p === 1 ? '10%' : '-10%'; // Se teletransporta al rival
+                                canvas.style.transform = transformStr(startY, scale);
+                                if (imgDef) imgDef.style.opacity = '0';
+                            }, 3150); // Rival desaparece a los 3150 ms
+                        } else if (attackerIdx === 1) { // Personaje 2 (Aquiles)
+                            scale = '0.176'; 
+                            targetX = p === 1 ? '8%' : '-8%'; 
+                        } else if (attackerIdx === 2) { // Personaje 3 (Kelshyna)
+                            scale = '0.165';
+                            targetX = p === 1 ? '8%' : '-8%'; 
+                            startY = '-60vh'; // Empieza alto
+                            endY = '0px'; // Termina abajo
+                            transitionStyle = 'transform 1s cubic-bezier(0.5, 0, 1, 1)'; // Efecto caída libre
+                            setTimeout(() => {
+                                if (imgDef) imgDef.style.opacity = '0';
+                            }, 4200); // Se oculta al rival a los 4,2 segundos
+                        } else if (attackerIdx === 3) { // Personaje 4 (Niss)
+                            scale = '0.273'; 
+                            targetX = p === 1 ? '8%' : '-8%'; // Centrado acercándose al rival
+                            setTimeout(() => {
+                                if (imgDef) imgDef.style.opacity = '0';
+                            }, 3000); // Se oculta al rival a los 3 segundos
+                        } else if (attackerIdx === 4) { // Personaje 5 (Helga)
+                            scale = '0.125'; 
+                            targetX = p === 1 ? '8%' : '-8%'; 
+                        } else if (attackerIdx === 5) { // Personaje 6 (Vicky)
+                            scale = '0.292'; 
+                            targetX = p === 1 ? '10%' : '-10%'; // Más centrado en la pantalla
+                            setTimeout(() => {
+                                if (imgDef) imgDef.style.opacity = '0';
+                            }, 3000); // Superposición al rival a partir del segundo 3
+                        }
+                        
+                        canvas.style.transition = 'none';
+                        canvas.style.transform = transformStr(startY, scale);
+                        canvas.classList.remove('hidden'); 
+                        
+                        // Forzamos un repintado antes de aplicar la transición de caída si la hubiera
+                        void canvas.offsetWidth;
+                        
+                        if (startY !== endY) {
+                            canvas.style.transition = transitionStyle;
+                            canvas.style.transform = transformStr(endY, scale);
+                        }
+
+                        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+                        const process = () => {
+                            if (ultimateVideoPlayer.paused || ultimateVideoPlayer.ended) return;
+                            if (ultimateVideoPlayer.videoWidth > 0) { 
+                                canvas.width = ultimateVideoPlayer.videoWidth; canvas.height = ultimateVideoPlayer.videoHeight; 
+                                ctx.drawImage(ultimateVideoPlayer, 0, 0); 
+                                let f = ctx.getImageData(0,0,canvas.width,canvas.height); let d = f.data;
+                                for (let i=0; i<d.length; i+=4) if (d[i+1]>80 && d[i+1]>d[i]*1.2 && d[i+1]>d[i+2]*1.2) d[i+3]=0; 
+                                ctx.putImageData(f, 0, 0); 
+                            }
+                            requestAnimationFrame(process);
+                        };
+                        ultimateVideoPlayer.onplay = process; ultimateVideoPlayer.onended = () => { canvas.classList.add('hidden'); finish(); };
+                        ultimateVideoPlayer.play().catch(() => finish());
+                    } else {
+                        finish();
+                    }
+                    
+                    const defeatFrames = fighters[selectedDrivers['p'+def]].defeated;
+                    let frameIdx = 0;
+                    const defeatInterval = setInterval(() => {
+                        frameIdx++;
+                        if (frameIdx < defeatFrames.length) imgDef.src = defeatFrames[frameIdx];
+                        else clearInterval(defeatInterval);
+                    }, 500);
+                    return; // Retornamos aquí para que el juego termine
+                }
+            }
+
+            // --- ANIMACIONES DE ACCIÓN ESTÁNDAR PARA TODOS LOS MODOS ---
+            triggerActionAnimation(p); 
+
+            if (gameState.theme === 'tirar-cuerda') {
+                gameState.tugBalance += (p === 1 ? -1 : 1);
+                document.getElementById('tugRopeGroup').style.transform = `translateX(${gameState.tugBalance * 60}px)`;
+                if (Math.abs(gameState.tugBalance) >= gameState.winningScore) endGame(gameState.tugBalance < 0 ? 1 : 2);
+            } else if (gameState.theme === 'carrera-motos') {
+                const pr = gameState['p'+p].score / gameState.winningScore;
+                document.getElementById('climber'+p).style.top = (32 + (pr * 60)) + '%';
+                document.getElementById('climber'+p).style.transform = `translateX(-50%) scale(${0.3 + (pr * 1.2)})`;
+                if (gameState['p'+p].score >= gameState.winningScore) endGame(p);
             }
         }
 
         function triggerActionAnimation(p) {
-            if (gameState.theme === 'tarik-tambang') {
+            if (gameState.theme === 'fight-game') {
+                const def = p === 1 ? 2 : 1;
+                document.getElementById('fighter'+p).src = fighters[selectedDrivers['p'+p]].attack;
+                document.getElementById('fighter'+def).src = fighters[selectedDrivers['p'+def]].hurt;
+                document.getElementById('fighter'+p+'-container').style.transform = p === 1 ? "translateX(50px) scale(1.1)" : "scaleX(-1) translateX(50px) scale(1.1)";
+                setTimeout(() => { if (gameState.active) { document.getElementById('fighter'+p).src = fighters[selectedDrivers['p'+p]].idle; document.getElementById('fighter'+def).src = fighters[selectedDrivers['p'+def]].idle; document.getElementById('fighter'+p+'-container').style.transform = p === 1 ? "" : "scaleX(-1)"; } }, 400);
+            } else if (gameState.theme === 'carrera-motos') {
+                document.getElementById('motoImg'+p).src = drivers[selectedDrivers['p'+p]].accel;
+                setTimeout(() => { if (gameState.active) document.getElementById('motoImg'+p).src = drivers[selectedDrivers['p'+p]].neutral; }, 400);
+            } else if (gameState.theme === 'tirar-cuerda') {
                 const img = document.getElementById('tugAnimatedImg'); if(!img) return;
                 const pullFrame = p === 1 ? characterConfig.tugPullLeft : characterConfig.tugPullRight;
                 const neutralFrame = characterConfig.tugNeutral;
@@ -1149,237 +1052,34 @@
                     if (!gameState.active) { clearInterval(animInterval); return; }
                     img.src = (frame % 2 === 0) ? pullFrame : neutralFrame;
                     if (frame >= 5) { clearInterval(animInterval); img.src = neutralFrame; }
-                }, 150); 
-            } else if (gameState.theme === 'panjat-pinang') {
-                const img = document.getElementById(`motoImg${p}`); if(!img) return;
-                img.src = drivers[selectedDrivers['p'+p]].accel;
-                setTimeout(() => { if (gameState.active && img) img.src = drivers[selectedDrivers['p'+p]].neutral; }, 400);
-            } else if (gameState.theme === 'fight-game') {
-                const def = p === 1 ? 2 : 1;
-                const imgAtt = document.getElementById(`fighter${p}`);
-                const imgDef = document.getElementById(`fighter${def}`);
-                const contAtt = document.getElementById(`fighter${p}-container`);
-                if(!imgAtt || !imgDef || !contAtt) return;
-                
-                // Quitar cualquier estilo inline de derrota (por si acaso)
-                imgDef.style.transform = "";
-                imgDef.style.transformOrigin = "";
-
-                imgAtt.src = fighters[selectedDrivers['p'+p]].attack;
-                imgDef.src = fighters[selectedDrivers['p'+def]].hurt;
-                if (p === 1) contAtt.style.transform = "translateX(50px) scale(1.1)";
-                else contAtt.style.transform = "scaleX(-1) translateX(50px) scale(1.1)";
-                setTimeout(() => { 
-                    if (gameState.active) {
-                        const iA = document.getElementById(`fighter${p}`);
-                        const iD = document.getElementById(`fighter${def}`);
-                        const cA = document.getElementById(`fighter${p}-container`);
-                        if (iA && iD && cA) {
-                            iA.src = fighters[selectedDrivers['p'+p]].idle;
-                            iD.src = fighters[selectedDrivers['p'+def]].idle;
-                            cA.style.transform = p === 1 ? "translateX(0) scale(1)" : "scaleX(-1) translateX(0) scale(1)";
-                        }
-                    } 
-                }, 400);
-            }
-        }
-
-        function generateQuestion(p) {
-            let a, b, op, ans; const l = gameState.level; const m = gameState.mode;
-            if (m === 'addition') { op = '+'; if (l === 'beginner') { a = rand(1, 9); b = rand(1, 9); } else if (l === 'amateur') { a = rand(1, 9); b = rand(10, 50); } else { a = rand(10, 99); b = rand(10, 99); } ans = a + b; }
-            else if (m === 'subtraction') { op = '-'; if (l === 'beginner') { a = rand(5, 12); b = rand(1, 5); } else if (l === 'amateur') { a = rand(20, 50); b = rand(1, 19); } else { a = rand(50, 99); b = rand(10, 49); } ans = a - b; }
-            else if (m === 'multiplication') { op = '×'; if (l === 'beginner') { a = rand(1, 5); b = rand(1, 5); } else if (l === 'amateur') { a = rand(2, 9); b = rand(2, 12); } else { a = rand(11, 20); b = rand(2, 9); } ans = a * b; }
-            else { op = '÷'; if (l === 'beginner') { b = rand(1, 5); ans = rand(1, 5); a = b * ans; } else if (l === 'amateur') { b = rand(2, 9); ans = rand(5, 12); a = b * ans; } else { b = rand(3, 12); ans = rand(10, 20); a = b * ans; } }
-            gameState['p' + p].target = ans; document.getElementById(`p${p}-question`).innerText = `${a} ${op} ${b} = ?`;
-        }
-
-        function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
-        
-        function pressKey(p, k) { 
-            if (!gameState.active) return; 
-            const ps = gameState['p' + p]; 
-            if (k === 'C') {
-                ps.currentAnswer = ''; 
-            } else if (k === 'GO') { 
-                if (ps.currentAnswer !== '') checkAnswer(p); 
-            } else { 
-                if (ps.currentAnswer.length < 5) ps.currentAnswer += k; 
-            } 
-            updateUI(p); 
-        }
-
-        function updateUI(p) { 
-            const u = document.getElementById(`p${p}-answer-display`); 
-            if(u) u.innerText = gameState['p' + p].currentAnswer; 
-        }
-
-        function checkAnswer(p) { 
-            const ps = gameState['p' + p]; 
-            if (parseInt(ps.currentAnswer) === ps.target) { 
-                let def = p === 1 ? 2 : 1;
-                let recovered = false;
-
-                // Mecánica de remontada (Healing) en modo pelea
-                if (gameState.theme === 'fight-game' && gameState['p' + def].streak >= 3) {
-                    if (gameState['p' + def].score > 0) {
-                        gameState['p' + def].score--; // Reducir la puntuación del rival equivale a curarse uno mismo
-                        recovered = true;
-                    }
-                }
-
-                ps.score++; 
-                ps.streak++; // Aumentamos la racha del que acierta
-                gameState['p' + def].streak = 0; // Rompemos la racha del rival
-
-                handleWinStep(p, recovered); 
-            } else { 
-                const card = document.getElementById(`p${p}-card`); 
-                if(card) { card.style.borderColor = '#fed7d7'; setTimeout(() => card.style.borderColor = 'white', 300); } 
-                ps.streak = 0; // Romper tu propia racha al fallar
-            } 
-            ps.currentAnswer = ''; 
-            updateUI(p); 
-            generateQuestion(p); 
-        }
-
-        function handleWinStep(p, recovered = false) {
-            if (gameState.theme === 'fight-game') {
-                const def = p === 1 ? 2 : 1;
-                const defHpPct = Math.max(0, 100 - (gameState['p' + p].score / gameState.winningScore) * 100);
-                const hpEl = document.getElementById(`hp${def}`);
-                if(hpEl) hpEl.style.width = `${defHpPct}%`;
-                
-                // Mostrar animación y UI de recuperación de vida
-                if (recovered) {
-                    const myHpPct = Math.max(0, 100 - (gameState['p' + def].score / gameState.winningScore) * 100);
-                    const myHpEl = document.getElementById(`hp${p}`);
-                    if (myHpEl) myHpEl.style.width = `${myHpPct}%`;
-
-                    const container = document.getElementById(`fighter${p}-container`);
-                    if (container) {
-                        const healText = document.createElement('div');
-                        healText.innerHTML = "+1 VIDA 💚";
-                        healText.className = "absolute -top-12 left-1/2 transform -translate-x-1/2 text-green-400 font-black text-2xl md:text-3xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] animate-bounce z-50 whitespace-nowrap";
-                        container.appendChild(healText);
-                        setTimeout(() => healText.remove(), 2000);
-                    }
-                }
-                
-                if (gameState['p' + p].score >= gameState.winningScore) {
-                    gameState.active = false;
-                    const imgDef = document.getElementById(`fighter${def}`);
-                    const imgAtt = document.getElementById(`fighter${p}`);
-                    const contAtt = document.getElementById(`fighter${p}-container`);
-
-                    if (imgDef && imgAtt && contAtt) {
-                        const defeatFrames = fighters[selectedDrivers['p'+def]].defeated;
-                        const attackerIdx = selectedDrivers['p'+p];
-                        const ultimateFrames = fighters[attackerIdx].ultimate;
-                        let frameIdx = 0;
-                        
-                        // Estado inicial para la victoria (Fotograma 1)
-                        imgDef.src = defeatFrames[frameIdx];
-                        imgAtt.src = ultimateFrames[frameIdx];
-                        
-                        // Escala condicional para el ataque definitivo (Personajes 4 y 5 reducidos un 15%)
-                        const ultScale = (attackerIdx === 3 || attackerIdx === 4) ? 0.85 : 1.15;
-                        
-                        // Acercamiento del ganador al perdedor
-                        if (p === 1) contAtt.style.transform = `translateX(120px) scale(${ultScale})`;
-                        else contAtt.style.transform = `scaleX(-1) translateX(120px) scale(${ultScale})`;
-                        
-                        // Reducir tamaño del perdedor y anclar al suelo
-                        imgDef.style.transform = "scale(0.65) translateY(-4%)";
-                        imgDef.style.transformOrigin = "bottom";
-                        
-                        const defeatInterval = setInterval(() => {
-                            frameIdx++;
-                            if (frameIdx < defeatFrames.length && frameIdx < ultimateFrames.length) {
-                                imgDef.src = defeatFrames[frameIdx];
-                                imgAtt.src = ultimateFrames[frameIdx];
-                                
-                                // Cuando llega al último fotograma de ambas acciones
-                                if (frameIdx === 2) {
-                                    clearInterval(defeatInterval);
-                                    
-                                    // Mantener la pose de gloria/derrota durante 1.5 segundos
-                                    setTimeout(() => {
-                                        // Devolver al ganador a su posición de reposo
-                                        imgAtt.src = fighters[selectedDrivers['p'+p]].idle;
-                                        contAtt.style.transform = p === 1 ? "translateX(0) scale(1)" : "scaleX(-1) translateX(0) scale(1)";
-                                        
-                                        // Finalizar partida
-                                        endGame(p);
-                                    }, 1500); 
-                                }
-                            }
-                        }, 500); // 500ms por fotograma
-                    }
-                    return;
-                }
-            }
-
-            triggerActionAnimation(p); 
-
-            if (gameState.theme === 'tarik-tambang') {
-                gameState.tugBalance += (p === 1 ? -1 : 1); 
-                const rope = document.getElementById('tugRopeGroup');
-                if (rope) rope.style.transform = `translateX(${gameState.tugBalance * 60}px)`; 
-                if (Math.abs(gameState.tugBalance) >= gameState.winningScore) endGame(gameState.tugBalance < 0 ? 1 : 2);
-            } else if (gameState.theme === 'panjat-pinang') {
-                const m = document.getElementById(`climber${p}`); if(!m) return;
-                const pr = (gameState['p' + p].score / gameState.winningScore);
-                m.style.top = `${32 + (pr * 60)}%`; m.style.transform = `translateX(-50%) scale(${0.3 + (pr * 1.2)})`; 
-                if (gameState['p' + p].score >= gameState.winningScore) endGame(p);
+                }, 150);
             }
         }
 
         function endGame(w) {
-            gameState.active = false;
-            const modal = document.getElementById('winnerModal');
-            const modalContainer = document.getElementById('modalContainer');
-            const winnerMessage = document.getElementById('winnerMessage');
-            const winnerText = document.getElementById('winnerText');
-
+            gameState.active = false; const modal = document.getElementById('winnerModal'); const cont = document.getElementById('modalContainer');
             if (gameState.theme === 'fight-game') {
-                // Pantalla de victoria personalizada para Pelea
-                modalContainer.className = "relative p-0 rounded-3xl text-center shadow-2xl w-[800px] max-w-[95%] h-[500px] border-8 border-yellow-500 overflow-hidden flex flex-col items-center justify-center text-white";
-                
-                // Imagen de victoria basada en el escenario
-                let victoryBg = "";
-                if (selectedStage === 0) {
-                    victoryBg = "https://i.postimg.cc/hvWqnkJf/image.png"; // Colosseo
-                } else if (selectedStage === 1) {
-                    victoryBg = "https://i.postimg.cc/KzP7YTq8/unnamed.jpg"; // Fiordo
-                } else {
-                    victoryBg = "https://i.postimg.cc/v8PgtX6X/unnamed.jpg"; // Falla
-                }
-                
-                modalContainer.style.backgroundImage = `url('${victoryBg}')`;
-                modalContainer.style.backgroundSize = "cover";
-                modalContainer.style.backgroundPosition = "center";
-
-                const fighter = fighters[selectedDrivers['p'+w]];
-                winnerText.innerHTML = `<img src="${fighter.select}" class="w-64 h-64 object-contain drop-shadow-[0_0_25px_rgba(255,255,255,0.9)] mb-2">`;
-                
-                winnerMessage.innerHTML = `
-                    <div class="bg-black/60 p-6 rounded-2xl backdrop-blur-md border border-white/20 mx-4">
-                        <h2 class="text-4xl font-black text-yellow-400 mb-2 uppercase italic tracking-tighter">${playerNames['p' + w]}</h2>
-                        <p class="text-2xl font-bold tracking-[0.2em] uppercase text-white shadow-black drop-shadow-lg">¡HA ALCANZADO LA GLORIA ETERNA!</p>
-                    </div>
-                `;
+                cont.className = "relative p-0 rounded-3xl text-center shadow-2xl w-[800px] h-[500px] border-8 border-yellow-500 overflow-hidden flex flex-col items-center justify-center text-white";
+                cont.style.backgroundImage = `url('${selectedStage === 0 ? "https://i.postimg.cc/hvWqnkJf/image.png" : (selectedStage === 1 ? "https://i.postimg.cc/KzP7YTq8/unnamed.jpg" : "https://i.postimg.cc/v8PgtX6X/unnamed.jpg")}')`;
+                cont.style.backgroundSize = "cover";
+                document.getElementById('winnerText').innerHTML = `<img src="${fighters[selectedDrivers['p'+w]].select}" class="w-64 h-64 object-contain drop-shadow-xl">`;
+                document.getElementById('winnerMessage').innerHTML = `<div class="bg-black/60 p-4 rounded-xl"><h2 class="text-3xl font-black text-yellow-400 italic">${playerNames['p'+w]}</h2><p class="text-xl font-bold">¡HA GANADO!</p></div>`;
             } else {
-                // Pantalla de victoria clásica para otros modos
-                modalContainer.className = "bg-white p-10 rounded-3xl text-center shadow-2xl max-w-sm border-4 border-blue-500";
-                modalContainer.style.backgroundImage = "";
-                winnerText.innerHTML = "🏆";
-                winnerMessage.innerText = `¡${playerNames['p' + w].toUpperCase()} HA GANADO!`;
+                cont.className = "bg-white p-10 rounded-3xl text-center shadow-2xl max-w-sm border-4 border-blue-500"; cont.style.backgroundImage = "";
+                document.getElementById('winnerText').innerText = "🏆"; document.getElementById('winnerMessage').innerText = playerNames['p'+w] + " GANA";
             }
-
             modal.classList.remove('hidden');
         }
 
+        function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+        function pressKey(p, k) { if (!gameState.active) return; if (k === 'C') gameState['p'+p].currentAnswer = ''; else if (k === 'GO') { if (gameState['p'+p].currentAnswer !== '') checkAnswer(p); } else if (gameState['p'+p].currentAnswer.length < 5) gameState['p'+p].currentAnswer += k; updateUI(p); }
+        function updateUI(p) { document.getElementById('p'+p+'-answer-display').innerText = gameState['p'+p].currentAnswer; }
+        function proceedToMotoMath() { showScreen('math'); }
+        function selectMathMode(m) { gameState.mode = m; showScreen('level'); }
+        function selectLevel(l) { gameState.level = l; startGame(); }
         function closeModal() { document.getElementById('winnerModal').classList.add('hidden'); backToGameTypeMenu(); }
+        function toggleFullscreen() { if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {}); else document.exitFullscreen(); }
+        function backToMainMenu() { showScreen('math'); }
     </script>
 </body>
 </html>
