@@ -406,6 +406,16 @@
         <p class="mt-4 text-xs text-blue-300 opacity-70 text-center px-4">Preparando texturas y animaciones...</p>
     </div>
 
+    <!-- Modal Error Fullscreen -->
+    <div id="fsErrorModal" class="modal hidden z-[3000]">
+        <div class="bg-white p-8 rounded-3xl text-center shadow-2xl max-w-sm border-4 border-yellow-500">
+            <h2 class="text-5xl mb-4">⚠️</h2>
+            <p class="text-xl font-bold mb-3 text-gray-800">Aviso de Pantalla Completa</p>
+            <p class="text-sm text-gray-600 mb-6">Tu navegador o plataforma (como Google Sites) tiene bloqueada la pantalla completa por seguridad. Para una mejor experiencia, abre el juego en una nueva pestaña o ventana.</p>
+            <button onpointerdown="document.getElementById('fsErrorModal').classList.add('hidden')" class="bg-yellow-500 text-white px-8 py-3 rounded-full font-bold hover:bg-yellow-600 transition-colors shadow-md">ENTENDIDO</button>
+        </div>
+    </div>
+
     <!-- Botones de Control -->
     <div class="fixed top-4 right-4 z-[200] flex gap-3">
         <button id="bgmToggleBtn" onpointerdown="toggleBGM()" class="bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition-all text-xl">🔊</button>
@@ -574,7 +584,7 @@
     <div id="countdownOverlay" class="countdown-overlay hidden"><div id="countdownValue">3</div></div>
 
     <!-- Modal Ganador -->
-    <div id="winnerModal" class="modal hidden">
+    <div id="winnerModal" class="modal hidden z-[3000]">
         <div id="modalContainer" class="bg-white p-10 rounded-3xl text-center shadow-2xl max-w-sm border-4 border-blue-500">
             <h2 id="winnerText" class="text-5xl mb-6">🏆</h2>
             <div id="winnerMessage" class="text-2xl font-black mb-8 text-gray-800"></div>
@@ -865,8 +875,30 @@
 
         // --- SOLICITAR PANTALLA COMPLETA ---
         function enterFullscreen() {
-            if (document.fullscreenEnabled && !document.fullscreenElement) {
-                document.documentElement.requestFullscreen().catch(e => console.log("Fullscreen automático cancelado por el navegador:", e));
+            const doc = document.documentElement;
+            let req = doc.requestFullscreen || doc.webkitRequestFullscreen || doc.mozRequestFullScreen || doc.msRequestFullscreen;
+            if (req && !document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                req.call(doc).catch(e => console.log("Fullscreen automático cancelado por el navegador:", e));
+            }
+        }
+        
+        function toggleFullscreen() { 
+            const doc = document.documentElement;
+            const isFullscreen = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+            
+            if (!isFullscreen) {
+                let req = doc.requestFullscreen || doc.msRequestFullscreen || doc.mozRequestFullScreen || doc.webkitRequestFullscreen;
+                if (req) {
+                    req.call(doc).catch(err => {
+                        console.log("Error de fullscreen:", err);
+                        document.getElementById('fsErrorModal').classList.remove('hidden');
+                    });
+                } else {
+                    document.getElementById('fsErrorModal').classList.remove('hidden');
+                }
+            } else {
+                let exit = document.exitFullscreen || document.msExitFullscreen || document.mozCancelFullScreen || document.webkitExitFullscreen;
+                if (exit) exit.call(document);
             }
         }
 
@@ -874,7 +906,7 @@
         let selectedDrivers = { p1: 0, p2: 1 };
         let selectedStage = 0;
         let playerNames = { p1: "Equipo Rojo", p2: "Equipo Azul" };
-        let gameState = { theme: '', mode: '', level: '', p1: { currentAnswer: '', target: 0, score: 0 }, p2: { currentAnswer: '', target: 0, score: 0 }, tugBalance: 0, active: false, winningScore: 10 };
+        let gameState = { theme: '', mode: '', level: '', p1: { currentAnswer: '', target: 0, score: 0, streak: 0 }, p2: { currentAnswer: '', target: 0, score: 0, streak: 0 }, tugBalance: 0, active: false, winningScore: 10 };
         const screens = { main: document.getElementById('gameTypeMenu'), motoSelect: document.getElementById('motoSelectMenu'), math: document.getElementById('mathModeMenu'), level: document.getElementById('levelMenu'), game: document.getElementById('gameScreen') };
 
         // --- TECLADO VIRTUAL ---
@@ -1060,7 +1092,8 @@
         }
 
         function resetGameData() {
-            gameState.p1 = { currentAnswer: '', score: 0 }; gameState.p2 = { currentAnswer: '', score: 0 };
+            gameState.p1 = { currentAnswer: '', score: 0, streak: 0 }; 
+            gameState.p2 = { currentAnswer: '', score: 0, streak: 0 };
             gameState.tugBalance = 0; gameState.active = false;
             gameState.winningScore = (gameState.theme === 'tarik-tambang') ? 3 : 8;
             updateUI(1); updateUI(2);
@@ -1094,11 +1127,11 @@
                             </div>
                         </div>
                         <div class="flex justify-between items-end px-4 xl:px-12 relative z-10 translate-y-4 xl:translate-y-8">
-                            <div id="fighter1-container" class="w-40 h-40 lg:w-48 lg:h-48 xl:w-64 xl:h-64 transform transition-transform duration-100">
-                                <img id="fighter1" class="w-full h-full object-contain drop-shadow-2xl" src="${fighters[selectedDrivers.p1].idle}" referrerpolicy="no-referrer">
+                            <div id="fighter1-container" class="relative w-40 h-40 lg:w-48 lg:h-48 xl:w-64 xl:h-64 transform transition-transform duration-100">
+                                <img id="fighter1" class="w-full h-full object-contain drop-shadow-2xl relative z-10" src="${fighters[selectedDrivers.p1].idle}" referrerpolicy="no-referrer">
                             </div>
-                            <div id="fighter2-container" class="w-40 h-40 lg:w-48 lg:h-48 xl:w-64 xl:h-64 transform transition-transform duration-100" style="transform: scaleX(-1);">
-                                <img id="fighter2" class="w-full h-full object-contain drop-shadow-2xl" src="${fighters[selectedDrivers.p2].idle}" referrerpolicy="no-referrer">
+                            <div id="fighter2-container" class="relative w-40 h-40 lg:w-48 lg:h-48 xl:w-64 xl:h-64 transform transition-transform duration-100" style="transform: scaleX(-1);">
+                                <img id="fighter2" class="w-full h-full object-contain drop-shadow-2xl relative z-10" src="${fighters[selectedDrivers.p2].idle}" referrerpolicy="no-referrer">
                             </div>
                         </div>
                     </div>`;
@@ -1161,16 +1194,76 @@
         }
 
         function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
-        function pressKey(p, k) { if (!gameState.active) return; const ps = gameState['p' + p]; if (k === 'C') ps.currentAnswer = ''; else if (k === 'GO') { if (ps.currentAnswer !== '') checkAnswer(p); } else { if (ps.currentAnswer.length < 5) ps.currentAnswer += k; } updateUI(p); }
-        function updateUI(p) { const u = document.getElementById(`p${p}-answer-display`); if(u) u.innerText = gameState['p' + p].currentAnswer; }
-        function checkAnswer(p) { const ps = gameState['p' + p]; if (parseInt(ps.currentAnswer) === ps.target) { ps.score++; handleWinStep(p); } else { const card = document.getElementById(`p${p}-card`); if(card) { card.style.borderColor = '#fed7d7'; setTimeout(() => card.style.borderColor = 'white', 300); } } ps.currentAnswer = ''; updateUI(p); generateQuestion(p); }
+        
+        function pressKey(p, k) { 
+            if (!gameState.active) return; 
+            const ps = gameState['p' + p]; 
+            if (k === 'C') {
+                ps.currentAnswer = ''; 
+            } else if (k === 'GO') { 
+                if (ps.currentAnswer !== '') checkAnswer(p); 
+            } else { 
+                if (ps.currentAnswer.length < 5) ps.currentAnswer += k; 
+            } 
+            updateUI(p); 
+        }
 
-        function handleWinStep(p) {
+        function updateUI(p) { 
+            const u = document.getElementById(`p${p}-answer-display`); 
+            if(u) u.innerText = gameState['p' + p].currentAnswer; 
+        }
+
+        function checkAnswer(p) { 
+            const ps = gameState['p' + p]; 
+            if (parseInt(ps.currentAnswer) === ps.target) { 
+                let def = p === 1 ? 2 : 1;
+                let recovered = false;
+
+                // Mecánica de remontada (Healing) en modo pelea
+                if (gameState.theme === 'fight-game' && gameState['p' + def].streak >= 3) {
+                    if (gameState['p' + def].score > 0) {
+                        gameState['p' + def].score--; // Reducir la puntuación del rival equivale a curarse uno mismo
+                        recovered = true;
+                    }
+                }
+
+                ps.score++; 
+                ps.streak++; // Aumentamos la racha del que acierta
+                gameState['p' + def].streak = 0; // Rompemos la racha del rival
+
+                handleWinStep(p, recovered); 
+            } else { 
+                const card = document.getElementById(`p${p}-card`); 
+                if(card) { card.style.borderColor = '#fed7d7'; setTimeout(() => card.style.borderColor = 'white', 300); } 
+                ps.streak = 0; // Romper tu propia racha al fallar
+            } 
+            ps.currentAnswer = ''; 
+            updateUI(p); 
+            generateQuestion(p); 
+        }
+
+        function handleWinStep(p, recovered = false) {
             if (gameState.theme === 'fight-game') {
                 const def = p === 1 ? 2 : 1;
                 const defHpPct = Math.max(0, 100 - (gameState['p' + p].score / gameState.winningScore) * 100);
                 const hpEl = document.getElementById(`hp${def}`);
                 if(hpEl) hpEl.style.width = `${defHpPct}%`;
+                
+                // Mostrar animación y UI de recuperación de vida
+                if (recovered) {
+                    const myHpPct = Math.max(0, 100 - (gameState['p' + def].score / gameState.winningScore) * 100);
+                    const myHpEl = document.getElementById(`hp${p}`);
+                    if (myHpEl) myHpEl.style.width = `${myHpPct}%`;
+
+                    const container = document.getElementById(`fighter${p}-container`);
+                    if (container) {
+                        const healText = document.createElement('div');
+                        healText.innerHTML = "+1 VIDA 💚";
+                        healText.className = "absolute -top-12 left-1/2 transform -translate-x-1/2 text-green-400 font-black text-2xl md:text-3xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] animate-bounce z-50 whitespace-nowrap";
+                        container.appendChild(healText);
+                        setTimeout(() => healText.remove(), 2000);
+                    }
+                }
                 
                 if (gameState['p' + p].score >= gameState.winningScore) {
                     gameState.active = false;
@@ -1287,7 +1380,6 @@
         }
 
         function closeModal() { document.getElementById('winnerModal').classList.add('hidden'); backToGameTypeMenu(); }
-        function toggleFullscreen() { if (!document.fullscreenEnabled) return; try { if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {}); else document.exitFullscreen().catch(() => {}); } catch (e) {} }
     </script>
 </body>
 </html>
